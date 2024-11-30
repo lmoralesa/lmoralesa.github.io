@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liuben Morales | Cloud Security Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Actualización del enlace a Font Awesome -->
+    <script src="https://kit.fontawesome.com/3c3c4441a7.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-100">
     <!-- Navigation -->
@@ -22,17 +23,24 @@
     </nav>
 
     <!-- Hero Section -->
-    <main class="container mx-auto mt-10 px-4">
+    <main class="container mx-auto mt-10 px-4 text-center">
         <h2 class="text-4xl font-bold mb-4">Welcome to My Security Portfolio</h2>
         <p class="text-xl mb-8">AWS & Cloud Security Projects</p>
 
-        <!-- Social Links -->
-        <div class="flex space-x-6 justify-center mt-6">
-            <a href="https://www.linkedin.com/in/liuben-morales-alpizar" target="_blank" class="text-blue-600 hover:text-blue-800">
-                <i class="fab fa-linkedin text-3xl"></i>
+        <!-- Social Links con texto -->
+        <div class="flex flex-col items-center space-y-4 mt-6">
+            <a href="https://www.linkedin.com/in/liuben-morales-alpizar" 
+               target="_blank" 
+               class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 flex items-center space-x-2">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
             </a>
-            <a href="https://www.credly.com/users/liuben-morales" target="_blank" class="text-yellow-600 hover:text-yellow-800">
-                <i class="fas fa-certificate text-3xl"></i>
+            
+            <a href="https://www.credly.com/users/liuben-morales" 
+               target="_blank" 
+               class="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 flex items-center space-x-2">
+                <i class="fas fa-certificate"></i>
+                <span>Credly</span>
             </a>
         </div>
     </main>
