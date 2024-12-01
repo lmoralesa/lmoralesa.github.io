@@ -167,50 +167,134 @@
        </div>
    </section>
 
-   <!-- Cybersecurity Projects Section -->
-   <section id="cybersecurity" class="py-20 bg-gray-50">
-       <div class="container mx-auto px-4">
-           <h2 class="text-3xl font-bold text-center mb-12">Cybersecurity Projects</h2>
-           <div class="max-w-4xl mx-auto">
-               <div class="bg-white rounded-lg shadow-lg p-8">
-                   <div class="space-y-6">
-                       <!-- Security Controls -->
-                       <div class="border-l-4 border-green-500 pl-4">
-                           <h4 class="text-xl font-bold mb-3">Security Controls Implementation</h4>
-                           <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Access Management</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Network Security</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Data Protection</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Security Monitoring</li>
-                           </ul>
-                       </div>
+  Te ayudaré a modificar la sección de Cybersecurity Projects para agregar herramientas y una subsección específica para Wireshark. Sugiero estructurarlo así:
 
-                       <!-- ISO 27001 -->
-                       <div class="border-l-4 border-green-500 pl-4">
-                           <h4 class="text-xl font-bold mb-3">ISO 27001 Framework</h4>
-                           <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Risk Assessment</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Security Policies</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Control Implementation</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Compliance Monitoring</li>
-                           </ul>
-                       </div>
+```html
+<!-- Cybersecurity Projects Section -->
+<section id="cybersecurity" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Cybersecurity Tools</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <!-- Tools Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Wireshark -->
+                    <a href="#wireshark-details" class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-center group">
+                        <i class="fas fa-network-wired text-blue-500 text-3xl mb-3 group-hover:text-blue-600"></i>
+                        <h4 class="font-bold text-lg">Wireshark</h4>
+                        <p class="text-sm text-gray-600">Network Protocol Analyzer</p>
+                    </a>
+                    
+                    <!-- Nmap -->
+                    <a href="#nmap-details" class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-center group">
+                        <i class="fas fa-search text-green-500 text-3xl mb-3 group-hover:text-green-600"></i>
+                        <h4 class="font-bold text-lg">Nmap</h4>
+                        <p class="text-sm text-gray-600">Network Scanner</p>
+                    </a>
 
-                       <!-- Security Operations -->
-                       <div class="border-l-4 border-green-500 pl-4">
-                           <h4 class="text-xl font-bold mb-3">Security Operations</h4>
-                           <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Incident Response</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Security Monitoring</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Log Analysis</li>
-                               <li class="flex items-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>Security Automation</li>
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
+                    <!-- Metasploit -->
+                    <a href="#metasploit-details" class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-center group">
+                        <i class="fas fa-bug text-red-500 text-3xl mb-3 group-hover:text-red-600"></i>
+                        <h4 class="font-bold text-lg">Metasploit</h4>
+                        <p class="text-sm text-gray-600">Penetration Testing</p>
+                    </a>
+
+                    <!-- Burp Suite -->
+                    <a href="#burpsuite-details" class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-center group">
+                        <i class="fas fa-spider text-purple-500 text-3xl mb-3 group-hover:text-purple-600"></i>
+                        <h4 class="font-bold text-lg">Burp Suite</h4>
+                        <p class="text-sm text-gray-600">Web Security Testing</p>
+                    </a>
+                </div>
+
+                <!-- Wireshark Details Section -->
+                <div id="wireshark-details" class="mt-12 pt-12 border-t border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6">Wireshark</h3>
+                    
+                    <!-- Overview -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold mb-4">What is Wireshark?</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Wireshark is a free and open-source packet analyzer. It's used for network troubleshooting, analysis, software and communications protocol development, and education.
+                        </p>
+                    </div>
+
+                    <!-- Use Cases -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold mb-4">Common Uses</h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Network troubleshooting and analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Security analysis and packet inspection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Protocol development and debugging</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Network monitoring and diagnostics</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Installation -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold mb-4">Installation Guide</h4>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <ol class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="font-bold mr-2">1.</span>
+                                    <span class="text-gray-700">Visit the official Wireshark website: 
+                                        <a href="https://www.wireshark.org/download.html" target="_blank" 
+                                           class="text-blue-600 hover:text-blue-800">Download Page</a>
+                                    </span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold mr-2">2.</span>
+                                    <span class="text-gray-700">Select your operating system (Windows, macOS, or Linux)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold mr-2">3.</span>
+                                    <span class="text-gray-700">Download and run the installer</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold mr-2">4.</span>
+                                    <span class="text-gray-700">Follow the installation wizard steps</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold mr-2">5.</span>
+                                    <span class="text-gray-700">Install WinPcap/Npcap if prompted (required for packet capture)</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.wireshark.org/" target="_blank" 
+                           class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+                            <i class="fas fa-globe mr-2"></i>Official Website
+                        </a>
+                        <a href="https://www.wireshark.org/docs/" target="_blank" 
+                           class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition duration-300">
+                            <i class="fas fa-book mr-2"></i>Documentation
+                        </a>
+                        <a href="https://wiki.wireshark.org/CaptureSetup" target="_blank" 
+                           class="bg-purple-500 text-white px-6 py-2 rounded-full hover:bg-purple-600 transition duration-300">
+                            <i class="fas fa-tools mr-2"></i>Setup Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
  <!-- Contact Section -->
    <section id="contact" class="py-20 bg-gray-100">
