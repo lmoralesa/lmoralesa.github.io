@@ -13,9 +13,11 @@
         .section-title {
             color: #007bff;
         }
-        .skill-item {
+        .skill-column {
             border-left: 4px solid #28a745;
             padding-left: 1rem;
+        }
+        .skill-item {
             margin-bottom: 0.5rem;
         }
     </style>
@@ -42,7 +44,7 @@
             <div class="space-x-6">
                 <a href="about.html" class="hover:text-blue-300 transition duration-300">About</a>
                 <a href="aws.html" class="hover:text-blue-300 transition duration-300">AWS</a>
-                <a href="cybersecurity.html" class="hover:text-blue-300 transition duration-300">Cybersecurity</a>
+                <a href="cybersecurity-tools.html" class="hover:text-blue-300 transition duration-300">Cybersecurity Tools</a>
                 <a href="labs.html" class="hover:text-blue-300 transition duration-300">Labs</a>
                 <a href="contact.html" class="hover:text-blue-300 transition duration-300">Contact</a>
             </div>
@@ -52,35 +54,64 @@
     <section id="about" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center section-title mb-12">About Me</h2>
-            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
                 <p class="text-gray-700 mb-6 leading-relaxed">
-                    I am an ISO 27001 certified IT Professional and AWS Solutions Architect Associate with 13+ years of experience in enterprise security operations and compliance frameworks. My expertise includes implementing robust security controls, managing risks effectively, conducting compliance testing, and developing comprehensive security procedures. I've successfully led control assessments and provided expert technical guidance across diverse enterprise environments. Currently pursuing a Master's in Digital Technologies Audit and Data Privacy, I am continually expanding my knowledge and skills in risk management and compliance.
+                    I am an ISO 27001 certified IT Professional and AWS Solutions Architect Associate with 13+ years of experience in enterprise security operations and compliance frameworks.  My expertise encompasses implementing robust security controls, managing risks effectively, conducting compliance testing, and developing comprehensive security procedures. I've successfully led control assessments and provided expert technical guidance across diverse enterprise environments.  Currently pursuing a Master's in Digital Technologies Audit and Data Privacy, I continually expand my knowledge and skills in risk management and compliance.
                 </p>
 
-                <div class="mb-8">
-                    <h3 class="font-bold text-lg mb-3">Key Skills</h3>
-                    <ul class="text-gray-700">
-                        <li class="skill-item">Strategic Planning</li>
-                        <li class="skill-item">Risk Management</li>
-                        <li class="skill-item">Incident Response</li>
-                        <li class="skill-item">Vulnerability Management</li>
-                        <li class="skill-item">Security Auditing</li>
-                        <li class="skill-item">AWS Cloud Services (list specific services)</li>
-                        <li class="skill-item">Network Security</li>
-                        <li class="skill-item">Compliance (ISO 27001, etc.)</li>
-                    </ul>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="skill-column">
+                        <h3 class="font-bold text-lg mb-3">Personal Skills</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="skill-item">Adaptable Leadership</li>
+                            <li class="skill-item">Proactive Problem Resolution</li>
+                            <li class="skill-item">Analytical Thinking</li>
+                            <li class="skill-item">Continuous Learning</li>
+                        </ul>
+                    </div>
+                    <div class="skill-column">
+                        <h3 class="font-bold text-lg mb-3">Professional Skills</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="skill-item">Strategic Planning</li>
+                            <li class="skill-item">Risk Management</li>
+                            <li class="skill-item">Cross-functional Team Coordination</li>
+                            <li class="skill-item">Stakeholder Engagement</li>
+                        </ul>
+                    </div>
+                    <div class="skill-column">
+                        <h3 class="font-bold text-lg mb-3">Technical Skills</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="skill-item">Security Controls Assessment</li>
+                            <li class="skill-item">ISO 27001 Framework</li>
+                            <li class="skill-item">SOC Operations</li>
+                            <li class="skill-item">AWS Services (List Specific Services)</li>
+                            <li class="skill-item">Network Security</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="mb-8">
-                    <h3 class="font-bold text-lg mb-3">Education</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Master's in Digital Technologies Audit and Data Privacy (In Progress) - Universidad Fidélitas</li>
-                        <li>Specialization in Cybersecurity - Universidad Fidélitas</li>
-                        <li>Bachelor's in Computer Engineering - Universidad Central de Costa Rica</li>
+
+                <h3 class="font-bold text-lg mb-3 mt-6">Experience</h3>
+                <div class="space-y-4 text-gray-700">
+                    <h4>Amazon Web Services (2022 - Present)</h4>
+                    <ul class="list-disc list-inside">
+                        <li>Conducted strategic customer journey planning and quarterly business reviews.</li>
+                        <li>Orchestrated cross-functional teams to resolve complex technical challenges.</li>
+                        <li>Established regular customer engagement cadence to ensure continuous value delivery.</li>
+                        <li>Led Well-Architected Framework reviews to assess and optimize customer architectures.</li>
                     </ul>
+                    <h4>Instituto Costarricense de Electricidad (2009-2022)</h4>
+                    <ul class="list-disc list-inside">
+                        <li>Implemented and managed enterprise-wide security monitoring using ArcSight SIEM.</li>
+                        <li>Conducted security assessments and vulnerability management.</li>
+                        <li>Developed and maintained security documentation, procedures, and controls.</li>
+                        <li>Led security incident response and provided technical guidance to teams.</li>
+                    </ul>
+                    <!-- Add other experience sections from your CV using similar formatting -->
+
                 </div>
 
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 mt-6">
                     <a href="https://www.linkedin.com/in/liuben-morales-alpizar" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
@@ -96,7 +127,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-4 text-center text-gray-600">
         <p>© 2024 Liuben Morales A.</p>
     </footer>
