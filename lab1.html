@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab #1: Security Principles & Kali Installation</title>
+    <title>Lab #1: Introduction to Kali Linux</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3c3c4441a7.js" crossorigin="anonymous"></script>
     <style>
@@ -40,29 +40,55 @@
 
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center section-title mb-12">Lab #1: Security Principles & Kali Linux Installation</h2>
+            <h2 class="text-3xl font-bold text-center section-title mb-12">Laboratory No. 1: Introduction to Kali Linux</h2>
 
-            <h3 class="text-xl font-bold mb-4">Introduction to Penetration Testing</h3>
-            <p class="text-gray-700 mb-6">Penetration testing is a process used to conduct high-level security assessments and audits.  A methodology defines the rules, practices, procedures, and methods to follow during a security audit.</p>
+            <h3 class="text-xl font-bold mb-4">Security Evaluation Methodologies</h3>
+            <p class="text-gray-700 mb-4">A penetration test (Penetration Testing) is the process used to perform a high-level security evaluation or audit. A methodology defines a set of rules, practices, procedures, and methods to follow and implement during any information security audit. A penetration testing methodology defines a roadmap with useful ideas and proven practices, which must be carefully managed to properly evaluate security systems.</p>
 
-            <h3 class="text-xl font-bold mb-4">Types of Penetration Tests</h3>
-            <p class="text-gray-700 mb-6">Common penetration testing types include black-box, white-box, and gray-box testing.</p>
+            <h3 class="text-xl font-bold mb-4">Types of Penetration Testing</h3>
+            <p class="text-gray-700 mb-4">There are different types of penetration tests; the most common and accepted are Black-Box penetration tests, White-Box penetration tests, and Grey-Box penetration tests.</p>
             <ul class="list-disc list-inside text-gray-700 mb-6">
-                <li><b>Black-box testing:</b>  The tester has no prior knowledge of the system.</li>
-                <li><b>White-box testing:</b> The tester has complete knowledge of the system.</li>
-                <li><b>Gray-box testing:</b> The tester has partial knowledge of the system.</li>
+                <li><b>Black Box Testing:</b> This type of testing takes the perspective of a malicious attacker, where testing is conducted without the knowledge of the entity's IT team, but with full knowledge and permission from management. This type of test is useful for evaluating technical security controls, the IT team's response to perceived security incidents, and staff knowledge and implementation of the entity's security policies.</li>
+                <li><b>White Box Testing:</b> This type of testing involves conducting external and internal tests with the knowledge and consent of the entity's IT staff, allowing a complete evaluation of the network and systems' security posture. This test can also provide a training opportunity, with staff observing the activities and methods used by professionals to evaluate and potentially bypass implemented security mechanisms. This provides context for security requirements implemented or maintained by IT staff, and can also help teach IT staff how to conduct tests.</li>
+                <li><b>Grey Box Testing:</b> The testing team has limited knowledge of defenses and assets. This type of testing evaluates the testing team's knowledge, with efficiency being the nature of the test. The depth and breadth depend on the quality and quantity of information provided to the testing team. It simulates an attack carried out by a disgruntled or dissatisfied (employee) member of the entity.</li>
             </ul>
 
-            <h3 class="text-xl font-bold mb-4">Setting up a Kali Linux Virtual Machine</h3>
-            <div class="space-y-4">
-                <h4 class="text-lg font-bold mb-2">1. Install VirtualBox</h4>
-                <p class="text-gray-700">Download and install Oracle VirtualBox from <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">https://www.virtualbox.org/wiki/Downloads</a>. <img src="path/to/your/virtualbox-download.jpg" alt="VirtualBox Download" class="w-64 rounded-lg"></p>
-                <h4 class="text-lg font-bold mb-2">2. Download Kali Linux</h4>
-                <p class="text-gray-700">Download the Kali Linux VirtualBox image.  <img src="path/to/your/kali-download.jpg" alt="Kali Download" class="w-64 rounded-lg"></p>
-                <h4 class="text-lg font-bold mb-2">3. Import Kali into VirtualBox</h4>
-                <p class="text-gray-700">Import the downloaded Kali Linux .ova file into VirtualBox.  <img src="path/to/your/kali-import.jpg" alt="Kali Import" class="w-64 rounded-lg"></p>
-                <!-- Add more steps and screenshots as needed -->
-            </div>
+            <h3 class="text-xl font-bold mb-4 mt-8 border-t border-gray-200 pt-4">Option No. 1: Setting up a Kali Linux Virtual Machine</h3>
+            <h4 class="text-lg font-bold mb-2">Activity No. 1: Download VirtualBox</h4>
+            <ol class="list-decimal list-inside text-gray-700">
+                <li>Update your operating system.</li>
+                <li>Download Oracle Virtual Box: Go to <a href="https://www.virtualbox.org/" target="_blank">https://www.virtualbox.org/</a></li>
+                <li>Click on "Download VirtualBox 6.1"</li>
+                <li>Select your host computer's operating system.</li>
+                <li>Open the downloaded file.</li>
+                <li>Run the installer and review each window and its options.</li>
+                <li>Select the features you want to install and the VirtualBox location.</li>
+                <li>Select the customization options you want to install.</li>
+                <li>Review the network and configuration warning and proceed with the installation.</li>
+                <li>Click on Install to proceed with the installation.</li>
+                <li>Once the installation process is complete, you will see the VirtualBox main screen.</li>
+            </ol>
+
+            <h4 class="text-lg font-bold mb-2 mt-4">Activity No. 1: Download Kali Linux</h4>
+            <ol class="list-decimal list-inside text-gray-700">
+                <li>Go to <a href="https://www.kali.org/get-kali/" target="_blank">https://www.kali.org/get-kali/</a></li>
+                <li>Select the Virtual Machines option.</li>
+                <li>Select the VirtualBox (64b) option and wait for the file to download.</li>
+                <li>Locate the downloaded file and right-click to select "Open with."</li>
+                <li>If you don't have a program to open .7z files, select "Look for an app in the Microsoft Store."</li>
+                <li>Otherwise, use 7-Zip, WinRAR, or a similar program to extract the files.</li>
+                <li>Select a location to extract the files (e.g., `D:\VirtualMachines\kali-linux-2022.3-virtualbox-amd64`).</li>
+                <li>In VirtualBox, click "Add," locate the extracted files, and select the `.vbox` file.</li>
+                <li>Review and adjust Virtual Machine settings (memory, processors).</li>
+                <li>Click "Start" to run the virtual machine.</li>
+            </ol>
+
+            <h4 class="text-lg font-bold mb-2 mt-4">First Activities in Kali Linux: Updating Kali Linux</h4>
+             <p class="text-gray-700 mb-4">After installation, regularly check for updates.  Use the following commands:</p>
+            <p class="text-gray-700 mb-4"><code>sudo apt update</code></p>
+            <p class="text-gray-700 mb-4"><code>sudo apt full-upgrade -y</code></p>
+
+
         </div>
     </section>
 
