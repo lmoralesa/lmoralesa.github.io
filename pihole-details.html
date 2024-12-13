@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... (head section: meta tags, links to CSS, etc.) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi-hole Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3c3c4441a7.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .section-title {
+            color: #007bff; /* Blue - Cybersecurity color scheme */
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Banner -->
-    <!-- ... (your banner code) ... -->
+    <!-- Banner (Under Construction) -->
+    <div class="bg-yellow-100 border-b border-yellow-200 fixed w-full top-16 z-40">
+        <div class="container mx-auto px-4 py-3 text-center">
+            <p class="text-yellow-800 font-semibold flex items-center justify-center">
+                <i class="fas fa-tools mr-2"></i>
+                This portfolio is currently under construction. Check back soon for updates!
+                <i class="fas fa-tools ml-2"></i>
+            </p>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="bg-gray-800 text-white p-4 fixed w-full z-50">
@@ -21,34 +41,13 @@
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center section-title mb-12">Pi-hole</h2>
-            <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg p-8">
-                <h3 class="text-xl font-bold mb-4">What is Pi-hole?</h3>
-                <p class="text-gray-700 mb-6">Pi-hole is a network-wide ad and tracker blocker.  It works by blocking requests to known advertising and tracking domains, improving privacy and network performance.</p>
-
-                <h3 class="text-xl font-bold mb-4">Key Features and Uses</h3>
-                <ul class="list-disc list-inside text-gray-700 mb-6">
-                    <li>Blocks ads and trackers on all devices on your network.</li>
-                    <li>Improves network speed and performance by reducing unnecessary traffic.</li>
-                    <li>Enhances privacy by preventing tracking requests.</li>
-                    <li>Easy to set up and manage (typically on a Raspberry Pi but can be on other systems).</li>
-                </ul>
-
-                <h3 class="text-xl font-bold mb-4">Installation and Setup</h3>
-                <p class="text-gray-700 mb-4">Detailed installation instructions can be found on the official Pi-hole website. It involves installing on a server (often a Raspberry Pi) and configuring your network's DNS settings to point to the Pi-hole server.</p>
-                <a href="https://pi-hole.net/" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Visit the Pi-hole Website</a>
-
-
-                <h3 class="text-xl font-bold mb-4">Additional Resources</h3>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li><a href="https://pi-hole.net/" target="_blank">Official Pi-hole Website</a></li>
-                    <li><a href="https://docs.pi-hole.net/" target="_blank">Pi-hole Documentation</a></li>
-                </ul>
-            </div>
+            <!-- ... (rest of your Pi-hole content) ... -->
         </div>
     </section>
 
-    <!-- Footer -->
-    <!-- ... (Your footer code) ... -->
+    <footer class="py-4 text-center text-gray-600">
+        <p>© 2024 Liuben Morales A.</p>
+    </footer>
 
 </body>
 </html>
