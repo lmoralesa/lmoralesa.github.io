@@ -156,6 +156,70 @@
     .tool-name { color: #fff; font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
     .tool-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.5; margin-bottom: 0.8rem; }
     .tool-cmd { background: rgba(0,0,0,0.4); border: 1px solid rgba(0,255,136,0.1); border-left: 3px solid var(--green); color: var(--green); font-family: 'Courier New', monospace; font-size: 0.72rem; padding: 0.4rem 0.7rem; border-radius: 0 4px 4px 0; overflow-x: auto; white-space: nowrap; }
+  
+    /* HOME LAB SECTION */
+    #homelab { background: #080c14; }
+    .lab-intro { text-align: center; max-width: 650px; margin: 0 auto 3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+    .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .lab-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .lab-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .lab-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .lab-card:hover::after { opacity: 1; }
+    .lab-card.dns { border-left: 3px solid #00ff88; }
+    .lab-card.dns::after { background: linear-gradient(90deg, #00ff88, transparent); }
+    .lab-card.dns:hover { border-color: #00ff88; }
+    .lab-card.firewall { border-left: 3px solid #ff5050; }
+    .lab-card.firewall::after { background: linear-gradient(90deg, #ff5050, transparent); }
+    .lab-card.firewall:hover { border-color: #ff5050; }
+    .lab-card.ids { border-left: 3px solid #ffc800; }
+    .lab-card.ids::after { background: linear-gradient(90deg, #ffc800, transparent); }
+    .lab-card.ids:hover { border-color: #ffc800; }
+    .lab-card.container { border-left: 3px solid #00d4ff; }
+    .lab-card.container::after { background: linear-gradient(90deg, #00d4ff, transparent); }
+    .lab-card.container:hover { border-color: #00d4ff; }
+    .lab-card.monitor { border-left: 3px solid #c864ff; }
+    .lab-card.monitor::after { background: linear-gradient(90deg, #c864ff, transparent); }
+    .lab-card.monitor:hover { border-color: #c864ff; }
+    .lab-icon-wrap {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .lab-icon-wrap.dns { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.2); }
+    .lab-icon-wrap.firewall { background: rgba(255,80,80,0.1); border: 1px solid rgba(255,80,80,0.2); }
+    .lab-icon-wrap.ids { background: rgba(255,200,0,0.1); border: 1px solid rgba(255,200,0,0.2); }
+    .lab-icon-wrap.container { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); }
+    .lab-icon-wrap.monitor { background: rgba(200,100,255,0.1); border: 1px solid rgba(200,100,255,0.2); }
+    .lab-info { flex: 1; }
+    .lab-name { color: #fff; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .lab-badge-wrap { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+    .lab-badge { font-size: 0.62rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Courier New', monospace; }
+    .lab-badge.dns { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); color: #00ff88; }
+    .lab-badge.firewall { background: rgba(255,80,80,0.1); border: 1px solid rgba(255,80,80,0.3); color: #ff5050; }
+    .lab-badge.ids { background: rgba(255,200,0,0.1); border: 1px solid rgba(255,200,0,0.3); color: #ffc800; }
+    .lab-badge.container { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: #00d4ff; }
+    .lab-badge.monitor { background: rgba(200,100,255,0.1); border: 1px solid rgba(200,100,255,0.3); color: #c864ff; }
+    .lab-badge.vpn { background: rgba(255,160,0,0.1); border: 1px solid rgba(255,160,0,0.3); color: #ffa000; }
+    .lab-badge.os { background: rgba(100,180,255,0.1); border: 1px solid rgba(100,180,255,0.3); color: #64b4ff; }
+    .lab-desc { color: var(--muted); font-size: 0.82rem; line-height: 1.55; margin-bottom: 0.8rem; }
+    .lab-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .lab-tag { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--muted); font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-family: 'Courier New', monospace; }
+    .lab-stats { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 3.5rem; padding: 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
+    .lab-stat { text-align: center; }
+    .lab-stat-num { font-size: 1.8rem; font-weight: 800; color: var(--green); }
+    .lab-stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
   </style>
 </head>
 <body>
@@ -167,6 +231,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#arsenal">Arsenal</a></li>
+    <li><a href="#homelab">Lab</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -432,6 +497,213 @@ function filterArsenal(cat) {
   });
 }
 </script>
+
+<section id="homelab">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">// self-hosted infrastructure</div>
+      <h2 class="section-title">Home <span>Lab</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <p class="lab-intro">
+      My personal cybersecurity lab runs 24/7 as a hands-on environment for testing, monitoring, and practicing defensive and offensive techniques. Every tool is self-hosted and actively maintained.
+    </p>
+    <div class="lab-grid">
+
+      <!-- Pi-hole -->
+      <div class="lab-card dns">
+        <div class="lab-icon-wrap dns">&#128275;</div>
+        <div class="lab-info">
+          <div class="lab-name">Pi-hole</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge dns">DNS Sinkhole</span>
+            <span class="lab-badge ids">Ad Blocking</span>
+          </div>
+          <div class="lab-desc">Network-wide DNS-based ad and tracker blocker. Intercepts all DNS queries on the LAN, blocks malicious domains, and provides full DNS query logging for traffic analysis and threat detection.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">DNS</span>
+            <span class="lab-tag">DHCP</span>
+            <span class="lab-tag">blocklist</span>
+            <span class="lab-tag">Raspberry Pi</span>
+            <span class="lab-tag">query logs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AdGuard Home -->
+      <div class="lab-card dns">
+        <div class="lab-icon-wrap dns">&#128737;</div>
+        <div class="lab-info">
+          <div class="lab-name">AdGuard Home</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge dns">DNS over HTTPS</span>
+            <span class="lab-badge vpn">DNS-over-TLS</span>
+          </div>
+          <div class="lab-desc">Advanced DNS filtering server with support for DoH and DoT encrypted protocols. Used as a secondary DNS resolver with custom filtering rules, parental controls, and encrypted upstream resolvers.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">DoH</span>
+            <span class="lab-tag">DoT</span>
+            <span class="lab-tag">custom rules</span>
+            <span class="lab-tag">encrypted DNS</span>
+            <span class="lab-tag">rewrites</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- pfSense -->
+      <div class="lab-card firewall">
+        <div class="lab-icon-wrap firewall">&#128293;</div>
+        <div class="lab-info">
+          <div class="lab-name">pfSense</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge firewall">Firewall</span>
+            <span class="lab-badge vpn">VPN Gateway</span>
+            <span class="lab-badge os">BSD</span>
+          </div>
+          <div class="lab-desc">Open-source firewall and router platform. Manages network segmentation, VLAN isolation, stateful packet inspection, IDS/IPS via Suricata, OpenVPN gateway, and traffic shaping for the entire home lab.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">VLAN</span>
+            <span class="lab-tag">NAT</span>
+            <span class="lab-tag">Suricata</span>
+            <span class="lab-tag">OpenVPN</span>
+            <span class="lab-tag">pfBlockerNG</span>
+            <span class="lab-tag">WireGuard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPNsense -->
+      <div class="lab-card firewall">
+        <div class="lab-icon-wrap firewall">&#128272;</div>
+        <div class="lab-info">
+          <div class="lab-name">OPNsense</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge firewall">Next-Gen FW</span>
+            <span class="lab-badge ids">IDS/IPS</span>
+            <span class="lab-badge os">HardenedBSD</span>
+          </div>
+          <div class="lab-desc">HardenedBSD-based firewall with a modern web UI. Used in a secondary lab segment for testing firewall rules, deep packet inspection, HAProxy load balancing, and comparing security postures vs pfSense.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">Zenarmor</span>
+            <span class="lab-tag">HAProxy</span>
+            <span class="lab-tag">Unbound DNS</span>
+            <span class="lab-tag">2FA</span>
+            <span class="lab-tag">GeoIP blocking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fail2ban -->
+      <div class="lab-card ids">
+        <div class="lab-icon-wrap ids">&#128679;</div>
+        <div class="lab-info">
+          <div class="lab-name">Fail2ban</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge ids">Brute-Force Protection</span>
+            <span class="lab-badge firewall">IP Banning</span>
+          </div>
+          <div class="lab-desc">Intrusion prevention framework that monitors log files and bans IPs after repeated failed login attempts. Configured to protect SSH, web services, and exposed APIs against brute-force and credential stuffing attacks.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">SSH protection</span>
+            <span class="lab-tag">iptables</span>
+            <span class="lab-tag">nginx jails</span>
+            <span class="lab-tag">auto-ban</span>
+            <span class="lab-tag">log parsing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portainer -->
+      <div class="lab-card container">
+        <div class="lab-icon-wrap container">&#128697;</div>
+        <div class="lab-info">
+          <div class="lab-name">Portainer</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge container">Container Mgmt</span>
+            <span class="lab-badge dns">Docker / K8s</span>
+          </div>
+          <div class="lab-desc">Web-based GUI for managing Docker containers, images, volumes, and networks across all lab nodes. Used to deploy and monitor self-hosted services, test container isolation, and practice Kubernetes workload management.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">Docker</span>
+            <span class="lab-tag">Kubernetes</span>
+            <span class="lab-tag">Stacks</span>
+            <span class="lab-tag">RBAC</span>
+            <span class="lab-tag">image scanning</span>
+            <span class="lab-tag">Swarm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zabbix -->
+      <div class="lab-card monitor">
+        <div class="lab-icon-wrap monitor">&#128202;</div>
+        <div class="lab-info">
+          <div class="lab-name">Zabbix</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge monitor">SIEM-lite</span>
+            <span class="lab-badge monitor">Monitoring</span>
+            <span class="lab-badge ids">Alerting</span>
+          </div>
+          <div class="lab-desc">Enterprise-grade open-source monitoring platform. Monitors all lab hosts, containers, network devices, and services in real time. Configured with custom triggers for security anomalies, port scans, and unauthorized access attempts.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">SNMP</span>
+            <span class="lab-tag">agents</span>
+            <span class="lab-tag">dashboards</span>
+            <span class="lab-tag">triggers</span>
+            <span class="lab-tag">SMTP alerts</span>
+            <span class="lab-tag">API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grafana + Prometheus bonus card -->
+      <div class="lab-card monitor">
+        <div class="lab-icon-wrap monitor">&#128200;</div>
+        <div class="lab-info">
+          <div class="lab-name">Grafana + Prometheus</div>
+          <div class="lab-badge-wrap">
+            <span class="lab-badge monitor">Dashboards</span>
+            <span class="lab-badge container">Metrics</span>
+          </div>
+          <div class="lab-desc">Prometheus scrapes metrics from all lab services and containers; Grafana visualizes network throughput, CPU load, blocked DNS queries, firewall drops, and security events in real-time custom dashboards.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">PromQL</span>
+            <span class="lab-tag">node exporter</span>
+            <span class="lab-tag">alerting</span>
+            <span class="lab-tag">Loki</span>
+            <span class="lab-tag">log aggregation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Lab Stats Bar -->
+    <div class="lab-stats">
+      <div class="lab-stat">
+        <div class="lab-stat-num">8+</div>
+        <div class="lab-stat-label">Services Running</div>
+      </div>
+      <div class="lab-stat">
+        <div class="lab-stat-num">24/7</div>
+        <div class="lab-stat-label">Uptime</div>
+      </div>
+      <div class="lab-stat">
+        <div class="lab-stat-num">3</div>
+        <div class="lab-stat-label">Network Segments</div>
+      </div>
+      <div class="lab-stat">
+        <div class="lab-stat-num">100%</div>
+        <div class="lab-stat-label">Self-Hosted</div>
+      </div>
+      <div class="lab-stat">
+        <div class="lab-stat-num">DNS+FW+IDS</div>
+        <div class="lab-stat-label">Defense Layers</div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <section id="contact">
   <div class="container">
