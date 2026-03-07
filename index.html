@@ -131,6 +131,31 @@
     footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.82rem; }
     footer span { color: var(--green); }
     @media (max-width: 600px) { nav ul { display: none; } }
+  
+    /* ARSENAL SECTION */
+    .arsenal-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; justify-content: center; }
+    .atab { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.78rem; cursor: pointer; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.08em; }
+    .atab:hover, .atab.active { background: var(--green); border-color: var(--green); color: #0a0e1a; font-weight: 700; }
+    .arsenal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
+    .tool-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; transition: all 0.3s; position: relative; overflow: hidden; }
+    .tool-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--green), var(--blue)); opacity: 0; transition: opacity 0.3s; }
+    .tool-card:hover { border-color: rgba(0,255,136,0.4); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,255,136,0.08); }
+    .tool-card:hover::before { opacity: 1; }
+    .tool-card.hidden { display: none; }
+    .tool-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+    .tool-icon { font-size: 1.4rem; }
+    .tool-badge { font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'Courier New', monospace; }
+    .tool-badge.recon { background: rgba(255,200,0,0.1); border: 1px solid rgba(255,200,0,0.3); color: #ffc800; }
+    .tool-badge.enum { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); color: var(--green); }
+    .tool-badge.web { background: rgba(255,80,80,0.1); border: 1px solid rgba(255,80,80,0.3); color: #ff5050; }
+    .tool-badge.cloud { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--blue); }
+    .tool-badge.lateral { background: rgba(200,100,255,0.1); border: 1px solid rgba(200,100,255,0.3); color: #c864ff; }
+    .tool-badge.container { background: rgba(0,180,255,0.1); border: 1px solid rgba(0,180,255,0.3); color: #00b4ff; }
+    .tool-badge.network { background: rgba(255,160,0,0.1); border: 1px solid rgba(255,160,0,0.3); color: #ffa000; }
+    .tool-badge.crack { background: rgba(255,50,50,0.1); border: 1px solid rgba(255,50,50,0.3); color: #ff3232; }
+    .tool-name { color: #fff; font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
+    .tool-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.5; margin-bottom: 0.8rem; }
+    .tool-cmd { background: rgba(0,0,0,0.4); border: 1px solid rgba(0,255,136,0.1); border-left: 3px solid var(--green); color: var(--green); font-family: 'Courier New', monospace; font-size: 0.72rem; padding: 0.4rem 0.7rem; border-radius: 0 4px 4px 0; overflow-x: auto; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -141,6 +166,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#arsenal">Arsenal</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -333,6 +359,80 @@
     </div>
   </div>
 </section>
+<section id="arsenal" style="background: #0d1117;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">// offensive toolkit</div>
+      <h2 class="section-title">Security <span>Arsenal</span></h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-top:0.5rem;">Tools I use across the full offensive security lifecycle — from recon to post-exploitation</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="arsenal-tabs">
+      <button class="atab active" onclick="filterArsenal('all')">All Tools</button>
+      <button class="atab" onclick="filterArsenal('recon')">Recon &amp; OSINT</button>
+      <button class="atab" onclick="filterArsenal('enum')">Enumeration</button>
+      <button class="atab" onclick="filterArsenal('web')">Web Exploitation</button>
+      <button class="atab" onclick="filterArsenal('cloud')">Cloud Pentesting</button>
+      <button class="atab" onclick="filterArsenal('lateral')">Lateral Movement</button>
+      <button class="atab" onclick="filterArsenal('container')">Containers &amp; K8s</button>
+      <button class="atab" onclick="filterArsenal('network')">Network &amp; Traffic</button>
+      <button class="atab" onclick="filterArsenal('crack')">Fuzzing &amp; Cracking</button>
+    </div>
+    <div class="arsenal-grid" id="arsenalGrid">
+      <div class="tool-card" data-cat="recon"><div class="tool-header"><span class="tool-icon">&#128269;</span><span class="tool-badge recon">RECON</span></div><div class="tool-name">Nmap</div><div class="tool-desc">Network mapper for host discovery, port scanning, service detection and OS fingerprinting across any network range.</div><div class="tool-cmd">nmap -sV -sC -A -p- --min-rate 5000 target</div></div>
+      <div class="tool-card" data-cat="recon"><div class="tool-header"><span class="tool-icon">&#127758;</span><span class="tool-badge recon">RECON</span></div><div class="tool-name">theHarvester</div><div class="tool-desc">Gathers emails, subdomains, hosts, employee names from public sources — Google, LinkedIn, Shodan, GitHub.</div><div class="tool-cmd">theHarvester -d target.com -b all</div></div>
+      <div class="tool-card" data-cat="recon"><div class="tool-header"><span class="tool-icon">&#128225;</span><span class="tool-badge recon">RECON</span></div><div class="tool-name">Shodan</div><div class="tool-desc">Search engine for internet-connected devices — identifies exposed services, banners, CVEs in real time.</div><div class="tool-cmd">shodan search "apache" country:CR port:443</div></div>
+      <div class="tool-card" data-cat="recon"><div class="tool-header"><span class="tool-icon">&#128203;</span><span class="tool-badge recon">RECON</span></div><div class="tool-name">Amass</div><div class="tool-desc">In-depth DNS enumeration and attack surface mapping via OSINT and active brute-force techniques.</div><div class="tool-cmd">amass enum -brute -d target.com</div></div>
+      <div class="tool-card" data-cat="enum"><div class="tool-header"><span class="tool-icon">&#128196;</span><span class="tool-badge enum">ENUM</span></div><div class="tool-name">Gobuster / Dirb</div><div class="tool-desc">Brute-force URI directories, DNS subdomains, and virtual host names against web servers at high speed.</div><div class="tool-cmd">gobuster dir -u http://target -w /usr/share/wordlists/dirb/common.txt</div></div>
+      <div class="tool-card" data-cat="enum"><div class="tool-header"><span class="tool-icon">&#128296;</span><span class="tool-badge enum">ENUM</span></div><div class="tool-name">FFuf</div><div class="tool-desc">Fast web fuzzer written in Go — directory, parameter, header, and vhost fuzzing with advanced filtering.</div><div class="tool-cmd">ffuf -w wordlist.txt -u http://target/FUZZ -mc 200</div></div>
+      <div class="tool-card" data-cat="enum"><div class="tool-header"><span class="tool-icon">&#128279;</span><span class="tool-badge enum">ENUM</span></div><div class="tool-name">Netcat</div><div class="tool-desc">The Swiss-army knife of networking — banner grabbing, port scanning, file transfers, and reverse shells.</div><div class="tool-cmd">nc -nv target 80 | nc -lvnp 4444</div></div>
+      <div class="tool-card" data-cat="enum"><div class="tool-header"><span class="tool-icon">&#128200;</span><span class="tool-badge enum">ENUM</span></div><div class="tool-name">Curl</div><div class="tool-desc">Command-line HTTP client for probing APIs, headers, auth endpoints, cookies and server response testing.</div><div class="tool-cmd">curl -s -I -X OPTIONS -H "X-Custom: test" http://target/api</div></div>
+      <div class="tool-card" data-cat="enum"><div class="tool-header"><span class="tool-icon">&#128373;</span><span class="tool-badge enum">ENUM</span></div><div class="tool-name">HakRawler</div><div class="tool-desc">Fast web crawler for endpoint discovery — extracts links, forms, JS files, API paths and inline secrets.</div><div class="tool-cmd">echo "https://target.com" | hakrawler -depth 3</div></div>
+      <div class="tool-card" data-cat="enum"><div class="tool-header"><span class="tool-icon">&#128481;</span><span class="tool-badge enum">ENUM</span></div><div class="tool-name">Enum4linux</div><div class="tool-desc">Enumerates Windows and Samba systems — users, shares, policies, password policies via SMB and RPC.</div><div class="tool-cmd">enum4linux -a -u "" -p "" target-ip</div></div>
+      <div class="tool-card" data-cat="web"><div class="tool-header"><span class="tool-icon">&#127993;</span><span class="tool-badge web">WEB</span></div><div class="tool-name">Burp Suite</div><div class="tool-desc">Industry-standard web app pentesting platform — intercept, scan, replay and exploit HTTP/HTTPS traffic.</div><div class="tool-cmd">Proxy &gt; Repeater &gt; Intruder &gt; Active Scanner</div></div>
+      <div class="tool-card" data-cat="web"><div class="tool-header"><span class="tool-icon">&#128024;</span><span class="tool-badge web">WEB</span></div><div class="tool-name">SQLmap</div><div class="tool-desc">Automated SQL injection detection and exploitation — blind, time-based, error-based, UNION attacks.</div><div class="tool-cmd">sqlmap -u "http://target?id=1" --dbs --batch</div></div>
+      <div class="tool-card" data-cat="web"><div class="tool-header"><span class="tool-icon">&#128128;</span><span class="tool-badge web">WEB</span></div><div class="tool-name">Metasploit</div><div class="tool-desc">World's most used pentest framework — exploits, payloads, encoders, post-exploitation modules and listeners.</div><div class="tool-cmd">msfconsole / use exploit/multi/handler</div></div>
+      <div class="tool-card" data-cat="web"><div class="tool-header"><span class="tool-icon">&#9889;</span><span class="tool-badge web">WEB</span></div><div class="tool-name">Nuclei</div><div class="tool-desc">Fast vulnerability scanner using YAML templates — CVEs, misconfigs, exposed panels, OWASP Top 10.</div><div class="tool-cmd">nuclei -u https://target.com -t cves/ -t misconfigurations/</div></div>
+      <div class="tool-card" data-cat="cloud"><div class="tool-header"><span class="tool-icon">&#9729;&#65039;</span><span class="tool-badge cloud">AWS</span></div><div class="tool-name">Pacu</div><div class="tool-desc">AWS exploitation framework — IAM enumeration, S3/EC2/Lambda misconfigs, privilege escalation paths.</div><div class="tool-cmd">pacu &gt; run iam__enum_permissions / s3__enum_bucket_discovery</div></div>
+      <div class="tool-card" data-cat="cloud"><div class="tool-header"><span class="tool-icon">&#128296;</span><span class="tool-badge cloud">CLOUD</span></div><div class="tool-name">ScoutSuite</div><div class="tool-desc">Multi-cloud security auditing — identifies misconfigurations in IAM, S3 ACLs, Security Groups, VPCs.</div><div class="tool-cmd">scout aws --report-dir ./report --no-browser</div></div>
+      <div class="tool-card" data-cat="cloud"><div class="tool-header"><span class="tool-icon">&#128260;</span><span class="tool-badge cloud">AZURE</span></div><div class="tool-name">ROADtools</div><div class="tool-desc">Azure AD enumeration — dumps users, groups, apps, service principals and conditional access policies.</div><div class="tool-cmd">roadrecon gather --access-token TOKEN &amp;&amp; roadrecon gui</div></div>
+      <div class="tool-card" data-cat="cloud"><div class="tool-header"><span class="tool-icon">&#128272;</span><span class="tool-badge cloud">GCP</span></div><div class="tool-name">GCPwn / gcloud</div><div class="tool-desc">GCP enumeration and privilege escalation — IAM roles, service accounts, storage bucket exposure checks.</div><div class="tool-cmd">gcloud iam service-accounts list --format json</div></div>
+      <div class="tool-card" data-cat="cloud"><div class="tool-header"><span class="tool-icon">&#128247;</span><span class="tool-badge cloud">CLOUD</span></div><div class="tool-name">Prowler</div><div class="tool-desc">AWS/Azure/GCP security best practices — CIS Benchmarks, NIST, GDPR, ISO 27001 automated checks.</div><div class="tool-cmd">prowler aws -M csv,json -c check11,check12</div></div>
+      <div class="tool-card" data-cat="cloud"><div class="tool-header"><span class="tool-icon">&#128273;</span><span class="tool-badge cloud">CLOUD</span></div><div class="tool-name">CloudMapper</div><div class="tool-desc">Visualizes AWS environments — attack paths, open security groups, unused IAM roles and resource exposure.</div><div class="tool-cmd">python cloudmapper.py collect --account prod</div></div>
+      <div class="tool-card" data-cat="lateral"><div class="tool-header"><span class="tool-icon">&#128194;</span><span class="tool-badge lateral">LATERAL</span></div><div class="tool-name">BloodHound</div><div class="tool-desc">AD attack path visualizer — finds shortest paths to Domain Admin via ACL abuse and Kerberos delegation.</div><div class="tool-cmd">SharpHound.exe --CollectionMethods All --ZipFileName out.zip</div></div>
+      <div class="tool-card" data-cat="lateral"><div class="tool-header"><span class="tool-icon">&#127939;</span><span class="tool-badge lateral">LATERAL</span></div><div class="tool-name">CrackMapExec</div><div class="tool-desc">Post-exploitation Swiss Army knife for AD — SMB, WinRM, LDAP, RDP enumeration and credential spraying.</div><div class="tool-cmd">cme smb 192.168.1.0/24 -u user -p pass --shares</div></div>
+      <div class="tool-card" data-cat="lateral"><div class="tool-header"><span class="tool-icon">&#128034;</span><span class="tool-badge lateral">LATERAL</span></div><div class="tool-name">Mimikatz</div><div class="tool-desc">Windows credential harvesting from memory — Pass-the-Hash, Pass-the-Ticket, Golden Ticket attacks.</div><div class="tool-cmd">sekurlsa::logonpasswords / kerberos::golden</div></div>
+      <div class="tool-card" data-cat="lateral"><div class="tool-header"><span class="tool-icon">&#128007;</span><span class="tool-badge lateral">LATERAL</span></div><div class="tool-name">Impacket</div><div class="tool-desc">Python suite for network protocols — PsExec, SecretsDump, WMIexec, Kerberoasting, AS-REP Roasting.</div><div class="tool-cmd">secretsdump.py -just-dc domain/user:pass@dc-ip</div></div>
+      <div class="tool-card" data-cat="container"><div class="tool-header"><span class="tool-icon">&#128697;</span><span class="tool-badge container">K8s</span></div><div class="tool-name">Trivy</div><div class="tool-desc">Container and Kubernetes vuln scanner — images, IaC configs, SBOM generation, secrets detection.</div><div class="tool-cmd">trivy image nginx:latest &amp;&amp; trivy k8s --report all cluster</div></div>
+      <div class="tool-card" data-cat="container"><div class="tool-header"><span class="tool-icon">&#127381;</span><span class="tool-badge container">K8s</span></div><div class="tool-name">Kube-hunter</div><div class="tool-desc">Hunts security weaknesses in Kubernetes clusters — API server exposure, RBAC misconfigs, etcd access.</div><div class="tool-cmd">kube-hunter --remote cluster-ip --report json</div></div>
+      <div class="tool-card" data-cat="container"><div class="tool-header"><span class="tool-icon">&#128030;</span><span class="tool-badge container">DOCKER</span></div><div class="tool-name">Deepce</div><div class="tool-desc">Docker and container escape tool — detects misconfigs, Linux capabilities abuse, and container breakout.</div><div class="tool-cmd">./deepce.sh --exploit --nmap-scan</div></div>
+      <div class="tool-card" data-cat="container"><div class="tool-header"><span class="tool-icon">&#128295;</span><span class="tool-badge container">K8s</span></div><div class="tool-name">kube-bench</div><div class="tool-desc">CIS Kubernetes Benchmark assessment — checks node, master, etcd, API server and RBAC policy configs.</div><div class="tool-cmd">kube-bench run --targets master,node,etcd</div></div>
+      <div class="tool-card" data-cat="container"><div class="tool-header"><span class="tool-icon">&#128279;</span><span class="tool-badge container">K8s</span></div><div class="tool-name">kubectl (pentest)</div><div class="tool-desc">Kubernetes CLI for privilege enumeration — service accounts, secrets, RBAC roles, pod escape vectors.</div><div class="tool-cmd">kubectl get secrets -A / kubectl auth can-i --list</div></div>
+      <div class="tool-card" data-cat="network"><div class="tool-header"><span class="tool-icon">&#128246;</span><span class="tool-badge network">NETWORK</span></div><div class="tool-name">Wireshark</div><div class="tool-desc">Deep packet inspection and protocol analysis — captures, dissects and filters live network traffic in real time.</div><div class="tool-cmd">Filter: http.request.method=="POST" / tcp.flags.syn==1</div></div>
+      <div class="tool-card" data-cat="network"><div class="tool-header"><span class="tool-icon">&#128396;</span><span class="tool-badge network">NETWORK</span></div><div class="tool-name">tcpdump</div><div class="tool-desc">CLI packet analyzer — captures traffic on any interface, filters by host, port, and protocol for offline analysis.</div><div class="tool-cmd">tcpdump -i eth0 -w cap.pcap host target -n</div></div>
+      <div class="tool-card" data-cat="network"><div class="tool-header"><span class="tool-icon">&#128257;</span><span class="tool-badge network">NETWORK</span></div><div class="tool-name">Responder</div><div class="tool-desc">LLMNR/NBT-NS/mDNS poisoner — captures NTLMv2 password hashes via rogue SMB, HTTP, LDAP servers.</div><div class="tool-cmd">responder -I eth0 -rdwv --lm</div></div>
+      <div class="tool-card" data-cat="network"><div class="tool-header"><span class="tool-icon">&#127981;</span><span class="tool-badge network">NETWORK</span></div><div class="tool-name">Scapy</div><div class="tool-desc">Python packet crafting — build, send and decode custom packets for protocol fuzzing and ARP spoofing.</div><div class="tool-cmd">IP(dst="target")/TCP(dport=80)/Raw(load="test")</div></div>
+      <div class="tool-card" data-cat="crack"><div class="tool-header"><span class="tool-icon">&#128481;</span><span class="tool-badge crack">CRACK</span></div><div class="tool-name">Hydra</div><div class="tool-desc">Fast online password brute-forcer — SSH, FTP, HTTP, SMB, RDP, VNC, LDAP, SMTP and 50+ protocols.</div><div class="tool-cmd">hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://target</div></div>
+      <div class="tool-card" data-cat="crack"><div class="tool-header"><span class="tool-icon">&#128477;</span><span class="tool-badge crack">CRACK</span></div><div class="tool-name">John the Ripper</div><div class="tool-desc">Offline password cracker — MD5, SHA, NTLM, bcrypt, custom rulesets, and incremental brute-force modes.</div><div class="tool-cmd">john --wordlist=rockyou.txt --rules=best64 hashes.txt</div></div>
+      <div class="tool-card" data-cat="crack"><div class="tool-header"><span class="tool-icon">&#9889;</span><span class="tool-badge crack">CRACK</span></div><div class="tool-name">Hashcat</div><div class="tool-desc">GPU-accelerated password cracker — dictionary, rule-based, mask, combination and hybrid attack modes.</div><div class="tool-cmd">hashcat -m 1000 -a 0 hash.txt rockyou.txt -r best64.rule</div></div>
+      <div class="tool-card" data-cat="crack"><div class="tool-header"><span class="tool-icon">&#128296;</span><span class="tool-badge crack">FUZZ</span></div><div class="tool-name">Wfuzz</div><div class="tool-desc">Web application fuzzer — parameters, headers, auth tokens, path traversal and injection discovery.</div><div class="tool-cmd">wfuzz -c -z file,list.txt --hc 404 http://target/FUZZ</div></div>
+    </div>
+  </div>
+</section>
+<script>
+function filterArsenal(cat) {
+  document.querySelectorAll('.atab').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.tool-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+
 <section id="contact">
   <div class="container">
     <div class="section-header">
